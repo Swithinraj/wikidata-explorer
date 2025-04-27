@@ -5,7 +5,7 @@ import ResultsList from './components/ResultsList'
 import DetailsPanel from './components/DetailsPanel'
 
 export default function App() {
-  const [lang, setLang] = useState('en')
+  // const [lang, setLang] = useState('en')
   const [results, setResults] = useState([])
   const [properties, setProperties] = useState([])
   const [loading, setLoading] = useState(false)
@@ -16,7 +16,7 @@ export default function App() {
     setProperties([])
     setLoading(true)
     try {
-      const items = await searchItems(term, lang)
+      const items = await searchItems(term)
       setResults(items)
     } catch (err) {
       console.error(err)
@@ -29,7 +29,7 @@ export default function App() {
   const handleSelect = async id => {
     setLoading(true)
     try {
-      const props = await fetchProperties(id, lang)
+      const props = await fetchProperties(id)
       setProperties(props)
     } catch (err) {
       console.error(err)
