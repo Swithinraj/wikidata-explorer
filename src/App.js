@@ -43,17 +43,6 @@ export default function App() {
     <div style={{ padding: '1rem' }}>
       <h1>Wikidata Explorer</h1>
 
-      <label style={{ display: 'block', marginBottom: '1rem' }}>
-        Language:
-        <select
-          value={lang}
-          onChange={e => setLang(e.target.value)}
-          style={{ marginLeft: '0.5rem' }}
-        >
-          <option value="en">English</option>
-          <option value="de">German</option>
-        </select>
-      </label>
 
       <SearchBox onSearch={handleSearch} />
 
