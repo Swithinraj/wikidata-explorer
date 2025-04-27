@@ -11,7 +11,7 @@ A web app to search and display Wikidata entries, built with React and SPARQL.
 ## Workflow
 
 1, **Design and wireframe**  
-   - Designed a simple UI with a search input,  results list, and detail table  
+   - Designed a simple UI with a search input, results list, and detail table  
    - Identified three main components: `SearchBox`, `ResultsList`, `DetailsPanel`  
 
 2, **Project setup**  
@@ -20,8 +20,8 @@ A web app to search and display Wikidata entries, built with React and SPARQL.
 
 3, **API abstraction**  
    - Created `src/api.js` with two functions  
-     - `searchItems(term, lang)` builds and sends a SPARQL label‐search query  
-     - `fetchProperties(id, lang)` builds and sends a SPARQL property‐fetch query  
+     - `searchItems(label)` builds and sends a SPARQL label‐search query  
+     - `fetchProperties(itemId)` builds and sends a SPARQL property‐fetch query  
    - Declared RDF prefixes (`bd:`, `rdfs:`, `wd:`, `wikibase:`) and set correct Accept headers  
 
 4, **UI components**  
@@ -30,7 +30,7 @@ A web app to search and display Wikidata entries, built with React and SPARQL.
    - **DetailsPanel** — renders selected item’s properties in a bordered table in the WEB UI.
 
 5, **State management and UX polish**  
-   - In `App.js`, managed `lang`, `results`, `properties`, `loading`, `hasSearched` states  
+   - In `App.js`, managed `results`, `properties`, `loading`, `hasSearched` states  
    - Showed “Loading…” while fetching, “0 results” if none found  
 
 
